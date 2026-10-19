@@ -78,6 +78,7 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .guess-a{margin-top:22px;font-size:.9375rem;color:var(--mute)}
 .guess-a b{color:var(--ink);font-weight:600}
 @keyframes mq{to{transform:translateX(-50%)}}
+@keyframes rin{from{opacity:0;transform:translateY(14px)}}
 @media (prefers-reduced-motion:reduce){.mq-row{animation:none;width:auto;flex-wrap:wrap}.mq-row .mq-set+.mq-set{display:none}.mq{-webkit-mask-image:none;mask-image:none;padding-inline:16px}}
 /* lo que creo */
 .creo{border-top:1px solid var(--line)}
@@ -226,6 +227,7 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .route.sel .route-h h3::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--copper);margin-left:10px;vertical-align:middle}
 .route.dim{opacity:.35;filter:saturate(.6)}
 .route.sel .stage{box-shadow:0 0 0 1.5px rgba(244,242,237,.9),0 18px 44px -18px rgba(244,242,237,.35)}
+.route.sel .stage.rec{box-shadow:0 18px 44px -18px rgba(244,242,237,.35)}
 .route .stage{transition:box-shadow .35s ease}
 .route.dim:focus-within{opacity:1;filter:none}
 .route-stages{display:grid;gap:12px}
@@ -235,7 +237,7 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .extra{display:grid;grid-template-columns:1fr auto;gap:6px 24px;padding-block:18px;border-bottom:1px solid var(--line);align-items:baseline}
 .extra p{color:var(--mute);font-size:.875rem;grid-column:1;max-width:62ch}
 .extra .price{grid-row:1 / span 2;grid-column:2}
-.extra p .pk{display:block;margin-top:8px;color:var(--ink);font-weight:600}
+.extra p .pk{display:block;margin-top:8px}
 .cam{margin-top:20px;color:var(--mute);font-size:.95rem;max-width:70ch}
 
 /* diagnóstico */
@@ -252,7 +254,10 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .fine{margin-top:32px;font-size:.75rem;line-height:1.55;color:var(--mute);max-width:80ch;letter-spacing:0}
 footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px solid var(--line)}
 
+@media (min-width:761px){.route-h{display:none}}
 @media (max-width:760px){
+  .route.dim{display:none}
+  .route.enter{animation:rin .45s cubic-bezier(.2,.7,.2,1)}
   body{font-size:16px}
   section{padding-block:60px}
   .hero{padding-block:28px 32px}
@@ -305,7 +310,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
   <p class="mission">Si quieres aprender, te enseño. Si prefieres que lo haga yo, me encargo. En los dos casos, empiezas con claridad.</p>
   <div class="actions">
     <a class="btn dx" href="https://tally.so/r/ArPJMz" target="_blank" rel="noopener">Haz tu diagnóstico sin costo</a>
-    <a class="tlink" href="#mapa">Ver el mapa de servicios →</a>
+    <a class="btn" href="#mapa">Ver el mapa de servicios</a>
   </div>
   <p class="where">En línea para todo México y Latinoamérica. Presencial en Santiago, N.L. y Ciudad Victoria, Tamps.</p>
 </div></section>
@@ -437,7 +442,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
   <div class="sec-head"><span class="lbl">Complementos</span><h2>Para sumar cuando haga falta.</h2></div>
   <div class="extras">
     <div class="extra"><h3>Fotografía profesional</h3><div class="price"><span class="amt quote">Cotización</span><span class="per">según tu ciudad</span></div><p>Cuando tu marca sí la necesita, yo contacto al fotógrafo adecuado, coordino la sesión y estoy presente para dirigirla, para que las fotos salgan alineadas a tu marca y no solo bonitas.</p></div>
-    <div class="extra"><h3>Diseño gráfico e impresos</h3><div class="price"><span class="amt quote">Cotización</span><span class="per">por pieza o paquete</span></div><p>Diseño la rotulación de tu local, lonas, uniformes, camisetas, gorras, merch, menús, etiquetas y todo lo que se imprime. Te recomiendo proveedores con buenas referencias en tu zona y te acompaño para que lo impreso salga como lo diseñamos. La impresión se paga directo al proveedor. <b class="pk">Pregunta por los paquetes especiales para tu giro: ya vienen armados con lo que una marca como la tuya suele necesitar, para que no tengas que pensar qué pedir.</b></p></div>
+    <div class="extra"><h3>Diseño gráfico e impresos</h3><div class="price"><span class="amt quote">Cotización</span><span class="per">por pieza o paquete</span></div><p>Diseño la rotulación de tu local, lonas, uniformes, camisetas, gorras, merch, menús, etiquetas y todo lo que se imprime. Te recomiendo proveedores con buenas referencias en tu zona y te acompaño para que lo impreso salga como lo diseñamos. La impresión se paga directo al proveedor. <span class="pk">Pregunta por los paquetes especiales para tu giro.</span></p></div>
     <div class="extra"><h3>Diseño de página web</h3><div class="price"><span class="amt">$6,500</span><span class="per">MXN · pago único</span></div><p>Diseño de tu página: quién eres, qué ofreces, fotos, ubicación y un botón directo a tu WhatsApp. Aparte, el dominio y el hosting (lo que mantiene tu página en internet) cuestan aprox. $1,000 a $1,500 al año; se pagan directo a la empresa de hospedaje y quedan a tu nombre.</p></div>
     <div class="extra"><h3>Puesta en línea</h3><div class="price"><span class="amt">$1,500</span><span class="per">MXN · pago único</span></div><p>Abro solo las cuentas donde tu cliente sí te busca, tu ficha en Google Maps y WhatsApp Business con catálogo. Ya viene incluida en Crecimiento (Etapa 2 de Identidad).</p></div>
   </div>
@@ -492,15 +497,10 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function pick(b){
     var routes=[].slice.call(map.querySelectorAll('.route'));
-    var first=routes.map(function(r){return r.getBoundingClientRect()});
     var id=b.getAttribute('data-route');
     btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
-    var stacked=window.matchMedia('(max-width:760px)').matches;
-    routes.forEach(function(r){var on=r.id===id;r.classList.toggle('sel',on);r.classList.toggle('dim',!on);r.style.order=stacked?(on?0:1):'';});
-    if(reduce||!stacked)return;
-    routes.forEach(function(r,i){var l=r.getBoundingClientRect();var dx=first[i].left-l.left,dy=first[i].top-l.top;if(!dx&&!dy)return;
-      r.style.transition='none';r.style.transform='translate('+dx+'px,'+dy+'px)';
-      requestAnimationFrame(function(){requestAnimationFrame(function(){r.style.transition='transform .5s cubic-bezier(.2,.7,.2,1),opacity .35s ease';r.style.transform='';});});});
+    routes.forEach(function(r){var on=r.id===id;r.classList.toggle('sel',on);r.classList.toggle('dim',!on);
+      if(on&&!reduce&&window.matchMedia('(max-width:760px)').matches){r.classList.remove('enter');void r.offsetWidth;r.classList.add('enter');}});
   }
   btns.forEach(function(b){b.addEventListener('click',function(){pick(b)})});
 })();
