@@ -115,6 +115,12 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .hero{padding-block:56px 40px}
 .hero .in{display:grid;gap:22px}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:6px}
+.hero-actions{flex-wrap:nowrap;gap:12px}
+.hero-actions .btn{white-space:nowrap}
+.l-short{display:none}
+@media (max-width:480px){.hero-actions{gap:8px}.hero-actions .btn{font-size:.875rem;padding:12px 16px}.l-long{display:none}.l-short{display:inline}}
+.perk{color:var(--copper);font-weight:600}
+.pitch b{font-weight:700}
 
 
 /* déjame adivinar */
@@ -326,6 +332,18 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .fine{margin-top:32px;font-size:.75rem;line-height:1.55;color:var(--mute);max-width:80ch;letter-spacing:0}
 footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px solid var(--line)}
 
+
+/* elevación con rebote al pasar el cursor */
+html .stage.stage,html .full.full,html .diag.diag,html .extra.extra,html .path.path{transition:transform .5s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease,outline-color .3s ease,background .2s,border-color .2s,color .2s,opacity .6s ease}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html .stage.stage:hover{transform:translateY(-8px);box-shadow:0 0 0 2px rgba(244,242,237,.95),0 0 26px rgba(244,242,237,.32),0 26px 44px -20px rgba(0,0,0,.7)}
+  html .stage.rec.stage:hover{box-shadow:0 0 0 1px var(--copper),0 0 28px rgba(194,96,63,.55),0 26px 44px -20px rgba(0,0,0,.7)}
+  html .path.path:hover{transform:translateY(-4px);border-color:var(--paper);box-shadow:0 0 22px rgba(244,242,237,.22)}
+  html .full.full:hover{transform:translateY(-8px);outline:2px solid rgba(255,226,210,.9);outline-offset:4px}
+  html .diag.diag:hover{transform:translateY(-6px);border-color:var(--copper);box-shadow:0 0 0 1px var(--copper),0 18px 40px -18px rgba(156,74,50,.55)}
+  .extra{border-radius:12px;padding-inline:16px;margin-inline:-16px}
+  html .extra.extra:hover{transform:translateY(-6px);background:var(--card);border-bottom-color:transparent;box-shadow:0 0 0 1.5px var(--copper),0 18px 36px -20px rgba(156,74,50,.5)}
+}
 @media (min-width:761px){.route-h{display:none}}
 @media (max-width:760px){
   .route.dim{display:none}
@@ -380,9 +398,9 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
   <h1>Cada marca necesita algo distinto. <span class="acc">Primero entendamos qué necesita la tuya.</span></h1>
   <p class="lead">Hola, soy Illeana, fundadora de BRONCANA©. Acompaño a negocios y proyectos que quieren comunicar mejor lo que hacen, sin gastar en lo que todavía no les hace falta. Antes de proponerte algo, te explico qué te conviene y por qué.</p>
   <p class="mission">Si quieres aprender, te enseño. Si prefieres que lo haga yo, me encargo. En los dos casos, empiezas con claridad.</p>
-  <div class="actions">
-    <a class="btn dx" href="https://tally.so/r/ArPJMz" target="_blank" rel="noopener">Haz tu diagnóstico sin costo</a>
-    <a class="btn" href="#mapa">Ver el mapa de servicios</a>
+  <div class="actions hero-actions">
+    <a class="btn dx" href="https://tally.so/r/ArPJMz" target="_blank" rel="noopener"><span class="l-long">Haz tu diagnóstico sin costo</span><span class="l-short">Diagnóstico sin costo</span></a>
+    <a class="btn" href="#mapa"><span class="l-long">Ver el mapa de servicios</span><span class="l-short">Ver servicios</span></a>
   </div>
   <p class="where">En línea para todo México y Latinoamérica. Presencial en Santiago, N.L. y Ciudad Victoria, Tamps.</p>
 </div></section>
@@ -430,7 +448,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
           <span class="loc"><svg class="li" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>En línea · México y Latinoamérica</span>
           <span class="more">Ver qué incluye</span>
         </summary>
-        <ul class="inc"><li>Una llamada por Zoom para conocerte, si lo necesitas</li><li>Reviso tu perfil y cómo explicas lo que vendes</li><li>Corrijo tu bio, historias destacadas y publicaciones fijadas</li><li>Ordeno colores y tipografías para que todo se vea de una sola marca</li><li>Te entrego por escrito las 5 cosas que conviene cambiar primero</li></ul>
+        <ul class="inc"><li>Una llamada por Zoom para conocerte, si lo necesitas</li><li>Reviso tu perfil y cómo explicas lo que vendes</li><li>Corrijo tu bio, historias destacadas y publicaciones fijadas</li><li>Ordeno colores y tipografías para que todo se vea de una sola marca</li><li>Te entrego por escrito las 5 cosas que conviene cambiar primero</li><li class="perk">Si después pasas a la Etapa 2 o 3, te descuento $1,000 de tu primer mes</li></ul>
       </details>
       <details class="stage rec">
         <summary>
@@ -441,7 +459,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
           <span class="loc"><svg class="li mx" viewBox="0 -3.5 24 24" aria-hidden="true" fill="currentColor"><path d="M2.4 1.9 8.6 2.5 11.2 4.9 13.9 6.2 15.6 7.5 15.1 10.7 16.4 13.2 17.7 14.2 20.6 12.7 21.3 11.4 23.4 11.6 22.3 13.8 19.9 14.8 19.3 17.1 17.1 15.8 13.6 15.3 9.5 12.0 8.7 9.8 6.8 7.6 5.3 5.8 3.4 2.9z"/><path d="M0.8 1.9 1.9 1.8 2.4 3.2 4.3 6.3 5.8 9.1 6.1 10.1 4.5 8.5 2.9 5.8 1.1 2.5z"/></svg>Presencial · Santiago, N.L. y Cd. Victoria</span>
           <span class="more">Ver qué incluye</span>
         </summary>
-        <ul class="inc"><li>Una visita al mes a tu negocio o espacio de trabajo para planear juntos</li><li>En el primer mes ordeno tu perfil: bio, historias destacadas y publicaciones fijadas</li><li>En la primera visita, un curso exprés y la Guía BRONCANA© para crear reels: cómo grabar, poner voz, música y subtítulos</li><li>Te enseño edición básica en tu celular</li><li>Cada mes, una guía con 6 publicaciones: qué grabar, qué decir y desde dónde</li><li>En la visita grabamos juntos las 2 primeras, para que pierdas el miedo a la cámara, y dejamos pactadas las siguientes</li><li>Evalúo cada publicación por WhatsApp antes de que la subas, en menos de 24 horas</li></ul>
+        <ul class="inc"><li>Una visita al mes a tu negocio o espacio de trabajo para planear juntos</li><li>En el primer mes ordeno tu perfil: bio, historias destacadas y publicaciones fijadas</li><li>En la primera visita, un curso exprés y la Guía BRONCANA© para crear reels: cómo grabar, poner voz, música y subtítulos</li><li>Te enseño edición básica en tu celular</li><li>Cada mes, una guía con 6 publicaciones: qué grabar, qué decir y desde dónde</li><li>En la visita grabamos juntos las 2 primeras, para que pierdas el miedo a la cámara, y dejamos pactadas las siguientes</li><li>Evalúo cada publicación por WhatsApp antes de que la subas, en menos de 24 horas</li><li>Al terminar los 3 meses, sabes planear, grabar y editar tu contenido por tu cuenta</li></ul>
         <p class="cert">✦ Incluye certificado Creador de contenido by BRONCANA©</p>
       </details>
       <details class="stage star">
@@ -449,7 +467,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
           <span class="tag dark">★ Contenido todo incluido</span>
           <div class="sh"><div><span class="n">Etapa 3</span><h4>BRONCANA© se encarga</h4></div><div class="price"><span class="amt">$7,500</span><span class="per">MXN al mes · mínimo 3 meses</span></div></div>
           <p class="here">Estás aquí si <span>prefieres dedicarte a lo tuyo y dejar tu contenido en manos de alguien que lo entiende.</span></p>
-          <p class="pitch">Tú te dedicas a lo tuyo. Yo me encargo de que más gente te conozca.</p>
+          <p class="pitch">Tú te dedicas a lo tuyo. Yo me encargo de que más gente te conozca: <b>20 piezas de contenido al mes</b>, listas y publicadas.</p>
           <span class="loc"><svg class="li mx" viewBox="0 -3.5 24 24" aria-hidden="true" fill="currentColor"><path d="M2.4 1.9 8.6 2.5 11.2 4.9 13.9 6.2 15.6 7.5 15.1 10.7 16.4 13.2 17.7 14.2 20.6 12.7 21.3 11.4 23.4 11.6 22.3 13.8 19.9 14.8 19.3 17.1 17.1 15.8 13.6 15.3 9.5 12.0 8.7 9.8 6.8 7.6 5.3 5.8 3.4 2.9z"/><path d="M0.8 1.9 1.9 1.8 2.4 3.2 4.3 6.3 5.8 9.1 6.1 10.1 4.5 8.5 2.9 5.8 1.1 2.5z"/></svg>Presencial · Santiago, N.L. y Cd. Victoria</span>
           <span class="more">Ver qué incluye</span>
         </summary>
@@ -467,7 +485,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
           <span class="loc"><svg class="li mx" viewBox="0 -3.5 24 24" aria-hidden="true" fill="currentColor"><path d="M2.4 1.9 8.6 2.5 11.2 4.9 13.9 6.2 15.6 7.5 15.1 10.7 16.4 13.2 17.7 14.2 20.6 12.7 21.3 11.4 23.4 11.6 22.3 13.8 19.9 14.8 19.3 17.1 17.1 15.8 13.6 15.3 9.5 12.0 8.7 9.8 6.8 7.6 5.3 5.8 3.4 2.9z"/><path d="M0.8 1.9 1.9 1.8 2.4 3.2 4.3 6.3 5.8 9.1 6.1 10.1 4.5 8.5 2.9 5.8 1.1 2.5z"/></svg>Presencial · Santiago, N.L. y Cd. Victoria</span>
           <span class="more">Ver qué incluye</span>
         </summary>
-        <ul class="inc"><li>Logo</li><li>Colores y tipografías de tu marca</li><li>Foto de perfil y portada para redes</li><li>Una primera publicación lista para subir</li></ul>
+        <ul class="inc"><li>Logo en versión principal y versión para fondos oscuros</li><li>Colores y tipografías de tu marca</li><li>Foto de perfil y portada para redes</li><li>Una primera publicación lista para subir</li><li>Archivos listos para redes e impresión</li></ul>
       </details>
       <details class="stage">
         <summary>
@@ -476,7 +494,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
           <span class="loc"><svg class="li mx" viewBox="0 -3.5 24 24" aria-hidden="true" fill="currentColor"><path d="M2.4 1.9 8.6 2.5 11.2 4.9 13.9 6.2 15.6 7.5 15.1 10.7 16.4 13.2 17.7 14.2 20.6 12.7 21.3 11.4 23.4 11.6 22.3 13.8 19.9 14.8 19.3 17.1 17.1 15.8 13.6 15.3 9.5 12.0 8.7 9.8 6.8 7.6 5.3 5.8 3.4 2.9z"/><path d="M0.8 1.9 1.9 1.8 2.4 3.2 4.3 6.3 5.8 9.1 6.1 10.1 4.5 8.5 2.9 5.8 1.1 2.5z"/></svg>Presencial · Santiago, N.L. y Cd. Victoria</span>
           <span class="more">Ver qué incluye</span>
         </summary>
-        <ul class="inc"><li>↑ Todo lo de la Etapa 1: logo, colores, tipografías, foto de perfil y portada para redes</li><li>Si aún no tienes nombre, lo creamos juntos, con su slogan</li><li>4 publicaciones listas para subir</li><li>Mockups realistas de tu marca, para que tengas una idea de cómo se vería en tu fachada, rótulo, vaso, bolsa o uniforme</li><li>Puesta en línea incluida: abro tus redes, tu ficha en Google Maps y WhatsApp Business</li></ul>
+        <ul class="inc"><li>↑ Todo lo de la Etapa 1: logo, colores, tipografías, foto de perfil y portada para redes</li><li>Si aún no tienes nombre, lo creamos juntos, con su slogan</li><li>4 publicaciones listas para subir</li><li>Mockups realistas de tu marca, para que tengas una idea de cómo se vería en tu fachada, rótulo, vaso, bolsa o uniforme</li><li>Puesta en línea incluida (valor $1,500): abro tus redes, tu ficha en Google Maps y WhatsApp Business</li></ul>
       </details>
       </div>
     </div>
@@ -534,7 +552,7 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
   <div class="extras">
     <div class="extra"><h3>Fotografía profesional</h3><div class="price"><span class="amt quote">Cotización</span><span class="per">según tu ciudad</span></div><p>Cuando tu marca sí la necesita, yo contacto al fotógrafo adecuado, coordino la sesión y estoy presente para dirigirla, para que las fotos salgan alineadas a tu marca y no solo bonitas.</p></div>
     <div class="extra"><h3>Diseño gráfico e impresos</h3><div class="price"><span class="amt quote">Cotización</span><span class="per">por pieza o paquete</span></div><p>Diseño la rotulación de tu local, lonas, uniformes, camisetas, gorras, merch, menús, etiquetas y todo lo que se imprime. Te recomiendo proveedores con buenas referencias en tu zona y te acompaño para que lo impreso salga como lo diseñamos. La impresión se paga directo al proveedor. <span class="pk">Pregunta por los paquetes especiales para tu giro.</span></p></div>
-    <div class="extra"><h3>Diseño de página web</h3><div class="price"><span class="amt">$6,500</span><span class="per">MXN · pago único</span></div><p>Diseño de tu página: quién eres, qué ofreces, fotos, ubicación y un botón directo a tu WhatsApp. Aparte, el dominio y el hosting (lo que mantiene tu página en internet) cuestan aprox. $1,000 a $1,500 al año; se pagan directo a la empresa de hospedaje y quedan a tu nombre.</p></div>
+    <div class="extra"><h3>Diseño de página web</h3><div class="price"><span class="amt">$6,500</span><span class="per">MXN · pago único</span></div><p>Diseño de tu página: quién eres, qué ofreces, fotos, ubicación y un botón directo a tu WhatsApp. <span class="pk">Con cualquier etapa de Identidad, queda en $5,500.</span> Aparte, el dominio y el hosting (lo que mantiene tu página en internet) cuestan aprox. $1,000 a $1,500 al año; se pagan directo a la empresa de hospedaje y quedan a tu nombre.</p></div>
     <div class="extra"><h3>Puesta en línea</h3><div class="price"><span class="amt">$1,500</span><span class="per">MXN · pago único</span></div><p>Abro solo las cuentas donde tu cliente sí te busca, tu ficha en Google Maps y WhatsApp Business con catálogo. Ya viene incluida en Crecimiento (Etapa 2 de Identidad).</p></div>
   </div>
 </div></section>
