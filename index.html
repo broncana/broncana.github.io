@@ -250,6 +250,15 @@ a:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 .full .fb-total{margin-top:12px;font-size:.9375rem;color:var(--mute-d)}
 .fb-total b{color:var(--paper);font-weight:600}
 @media (max-width:520px){.fb-row{flex-direction:column;align-items:flex-start;gap:2px}.fb-p{text-align:left}}
+.fb-plan{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.fb-m{display:grid;gap:2px;padding:10px 12px;border-radius:10px;background:rgba(244,242,237,.07)}
+.fb-m span{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute-d)}
+.fb-m b{font-family:var(--sans);font-size:1.05rem;color:var(--paper)}
+.fb-m em{font-style:normal;font-size:.75rem;color:var(--mute-d)}
+.fb-why{display:grid;gap:8px}
+.full .fb-why-t{font-weight:600;color:var(--paper)}
+.fb-why ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:.9375rem;color:#E4E1D9}
+.fb-why b{color:var(--paper);font-weight:600}
 .full p{color:#E4E1D9}
 .full p{max-width:66ch}
 .here.light{color:var(--paper)}
@@ -489,14 +498,27 @@ footer{padding-block:28px 40px;font-size:.75rem;color:var(--mute);border-top:1px
         <span class="lbl">Contenido + Identidad</span>
         <h3>Marca completa</h3>
       </div>
-      <div class="price"><span class="amt">$6,500</span><span class="per">MXN al mes · mínimo 3 meses</span><span class="per">+ $6,500 de identidad · pago único</span></div>
+      <div class="price"><span class="amt">$13,000</span><span class="per">MXN el primer mes</span><span class="per">después $6,500 al mes · mínimo 3 meses</span></div>
     </div>
     <p class="here light">Estás aquí si <span>tu marca creció, quieres llevarla a otro nivel o necesitas resolver identidad y contenido al mismo tiempo.</span></p>
     <div class="fbreak">
       <div class="fb-row"><span>Identidad completa <em>(Crecimiento)</em></span><span class="fb-p"><s>$7,500</s> <b>$6,500</b> <em>pago único</em></span></div>
       <div class="fb-row"><span>Contenido todo incluido <em>(Etapa 3)</em></span><span class="fb-p"><s>$7,500</s> <b>$6,500</b> <em>al mes</em></span></div>
       <div class="fb-row"><span>Estrategia de marca y manual de uso</span><span class="fb-p"><b>Incluido</b></span></div>
-      <p class="fb-total">Por separado: $30,000 · Marca completa: $26,000 en 3 meses.<br><b>Ahorras $4,000 y la estrategia va incluida.</b></p>
+      <div class="fb-plan">
+        <div class="fb-m"><span>Mes 1</span><b>$13,000</b><em>identidad + contenido</em></div>
+        <div class="fb-m"><span>Mes 2</span><b>$6,500</b><em>contenido</em></div>
+        <div class="fb-m"><span>Mes 3</span><b>$6,500</b><em>contenido</em></div>
+      </div>
+      <p class="fb-total">Los 3 meses: <b>$26,000</b>. Si contratas Crecimiento y la Etapa 3 por separado, pagas $30,000 y sin la estrategia.<br><b>Ahorras $4,000 y la estrategia va incluida.</b></p>
+    </div>
+    <div class="fb-why">
+      <p class="fb-why-t">¿Por qué elegir Marca completa?</p>
+      <ul>
+        <li><b>Todo sale con una misma idea.</b> Tu logo, tus colores y tu contenido se diseñan juntos, no por separado.</li>
+        <li><b>Pagas menos.</b> Cada parte cuesta $1,000 menos que comprándola sola.</li>
+        <li><b>Arrancas con estrategia.</b> Antes de diseñar definimos a quién le hablas y qué te hace diferente; eso no viene en ningún otro paquete.</li>
+      </ul>
     </div>
     <p>Después de tu diagnóstico, armo un proyecto hecho para tu marca, con lo que necesitas de cada camino y en el orden que te conviene.</p>
     <details class="full-inc">
